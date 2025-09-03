@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form</title>
+</head>
+<style>
+
+  body{
+  width: 100%;
+    margin: 0;
+    font-family: sans-serif;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+  }
+  .form {
+    border:none;
+    border-radius: 7px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.1), 4px 8px 16px rgba(0,0,0,0.1);
+    height:100%;
+
+  }
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .form-field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    width: 110%;
+    padding: 10px;
+    border: 1px solid;
+    border-color: gray;
+    border-radius: 4px;
+
+
+  }
+  .select-subject {
+    width: 100%;
+    padding: 10px;
+    border-color: grey;
+    border-radius: 4px;
+  }
+
+  .message-area {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+  }
+
+  .form-btn {
+    display: flex;
+    justify-content: right;
+    margin-top: 10px;
+    gap: 10px;
+
+  }
+  .btn-cancel {
+    font-size: 18px;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  .btn-submit {
+    font-size: 18px;
+    color: white;
+    background: blue;
+    border: none;
+    border-radius: 4px;
+   padding: 10px;
+  }
+
+  label {
+    color: gray;
+  }
+  span {
+    color: gray;
+  }
+
+</style>
+<body>
+ <div class="container">
+
+  <div class="left">
+    <div class="form">  <h1>Contact Form</h1>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="first">First Name</label>
+          <input id="first" type="text" placeholder="Enter First Name" />
+        </div>
+        <div class="form-field">
+          <label for="last">Last Name</label>
+          <input id="last" type="text" placeholder="Enter First Name" />
+        </div>
+      </div>
+      <div  class="form-row">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email"  type="text" placeholder="Email" />
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="text" placeholder="Phone number" />
+        </div>
+      </div>
+      <div class="form-row">
+        <span>Subject</span>
+      </div>
+      <div class="form-row">
+
+<!--          <label class="form-field">Subject</label>-->
+
+
+        <select id="subject" class="select-subject">
+          <option disabled selected>Select a Subject</option>
+          <option>Java</option>
+          <option>C</option>
+          <option>Python</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <span>Message</span>
+      </div>
+      <div class="form-row">
+
+        <textarea class="message-area" id="message" rows="5"></textarea>
+      </div>
+      <div class="form-btn">
+        <button  class="btn-cancel">Cancel</button>
+        <button class="btn-submit" type="submit" onclick="handleSubmit()">Submit</button>
+      </div>
+
+    </div>
+  </div>
+   <div id="display">
+
+   </div>
+ </div>
+<script>
+
+
+   function handleSubmit() {
+     const first=document.getElementById("first").value;
+     const last=document.getElementById("last").value;
+     const email=document.getElementById("email").value;
+     const phone=document.getElementById("phone").value;
+     const subject=document.getElementById("subject").value;
+     const message=document.getElementById("message").value;
+
+     console.log("FirstName : "+first+" "+"LastName : "+last+" "+"Email : "+email+" "+"PhoneNumber : "+" "+phone+" "+"Subject : "+""+subject+""+"Message : "+" "+message)
+   }
+
+</script>
+</body>
+</html>
